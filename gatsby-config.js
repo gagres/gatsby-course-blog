@@ -1,16 +1,53 @@
 module.exports = {
   siteMetadata: {
     title: `My Blog`,
+    position: `Back-end developer`,
     description: `A blog about frontend development and other cool stuff`,
-    author: `@myblog`,
+    author: `@myblog`
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    // needs to be the first one to work with gatsby-remark-images
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `uploads`,
+        path: `${__dirname}/static/assets/img`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // Plugins configs
+        plugins: [
+          {
+            resolve: `gatsby-remark-relative-images-v2`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 960,
+              linkImagesToOriginal: false
+            }
+          },
+          `gatsby-remark-lazy-load`,
+          `gatsby-remark-prismjs`
+        ],
       },
     },
     `gatsby-transformer-sharp`,

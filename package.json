@@ -11,12 +11,23 @@
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.2",
     "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-plugin-styled-components": "^3.2.3",
+    "gatsby-remark-images": "^3.2.6",
+    "gatsby-remark-lazy-load": "^1.0.2",
+    "gatsby-remark-prismjs": "^3.4.5",
+    "gatsby-remark-relative-images-v2": "^0.1.5",
     "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.3",
     "gatsby-transformer-sharp": "^2.4.3",
+    "lazysizes": "^5.2.0",
+    "prismjs": "^1.20.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0"
+    "react-helmet": "^6.0.0",
+    "styled-components": "^5.1.0",
+    "styled-icons": "^10.2.1"
   },
   "devDependencies": {
     "prettier": "2.0.4"
@@ -27,6 +38,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "develop:playground": "GATSBY_GRAPHQL_IDE=playground npm run develop",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
