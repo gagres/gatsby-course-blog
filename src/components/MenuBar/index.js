@@ -6,6 +6,8 @@ import { LightBulb as Light } from '@styled-icons/heroicons-solid/LightBulb'
 import { Grid } from '@styled-icons/boxicons-solid/Grid'
 import { ListUl as List } from '@styled-icons/boxicons-regular/ListUl'
 
+import getThemeColor from '../../utils/getThemeColor'
+
 import * as S from './styled';
 
 const MenuBar = () => {
@@ -27,15 +29,27 @@ const MenuBar = () => {
         window.__onDisplayChange = () => setDisplay(window.__display)
     }, [])
 
+    const themeColor = getThemeColor();
+
     return (
         <S.MenuBarWrapper>
             <S.MenuBarGroup>
-                <S.MenuBarLink to="/" title="Voltar para a Home">
+                <S.MenuBarLink to="/" 
+                    cover
+                    direction="left"
+                    bg={themeColor}
+                    duration={0.6}
+                    title="Voltar para a Home">
                     <S.MenuBarItem>
                         <Home />
                     </S.MenuBarItem>
                 </S.MenuBarLink>
-                <S.MenuBarLink to="/search/" title="Pesquisar">
+                <S.MenuBarLink to="/search/" 
+                    cover
+                    direction="left"
+                    bg={themeColor}
+                    duration={0.6}
+                    title="Pesquisar">
                     <S.MenuBarItem>
                         <Search />
                     </S.MenuBarItem>

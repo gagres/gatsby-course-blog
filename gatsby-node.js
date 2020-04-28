@@ -36,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
                             description
                             category
                             background
+                            image
                         }
                         timeToRead
                         fields {
@@ -77,7 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 
-    const postsPerPage = 1
+    const postsPerPage = 5
     const numPages = Math.ceil(posts.length / postsPerPage)
 
     Array.from({ length: numPages }).forEach((_, index) => {

@@ -2,18 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
+import getThemeColor from '../../utils/getThemeColor'
+
 import * as S from './styled'
 
 const Pagination = ({ isFirst, isLast, currentPage, numPages, prevPage, nextPage }) => (
     <S.PaginationWrapper>
         {!isFirst &&
-            <Link to={prevPage}>Pagina anterior</Link>
+            <Link to={prevPage}
+                cover
+                direction="left"
+                bg={getThemeColor()}
+                duration={0.6}>Pagina anterior</Link>
         }
 
         <p>{currentPage} de {numPages}</p>
 
         {!isLast &&
-            <Link to={nextPage}>Próxima pagina</Link>
+            <Link to={nextPage}
+                cover
+                direction="right"
+                bg={getThemeColor()}
+                duration={0.6}>Próxima pagina</Link>
         }
     </S.PaginationWrapper>
 )

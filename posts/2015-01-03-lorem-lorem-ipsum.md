@@ -4,6 +4,7 @@ title: Lorem Lorem Ipsum
 description: And I'm not lorem lorem ipsum
 category: JS
 background: "#7AAB13"
+image: "/assets/img/lake.jpg"
 ---
 
 # Lorem ipsum
